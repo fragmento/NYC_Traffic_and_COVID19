@@ -37,3 +37,10 @@ Hospitalization data comes from [New York's City health webpage](https://www1.ny
 I create a hospitalization index by finding the daily percentage of change in the 7-day rolling hospitalization numbers.
 
 ![hospitalization rate](/Data/hospitalization_rate_of_change.png)
+
+
+## Social distance - Traffic index
+
+I use the first week of February as my baseline traffic congestion. I divide each day of the daily traffic index by the corresponding day in the base week.
+
+![TSD](/Data/TSD_index.png)
