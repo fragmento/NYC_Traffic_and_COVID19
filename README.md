@@ -53,7 +53,7 @@ As you can see Newyorkers started quarantining themselves much earlier than the 
 
 ## Linear regression model
 
-I fit a simple linear model using the traffic social distance `'TSD_rolling'` as a predictor of Hospitalization's percentage growth `'hosp_change'` and test the $R^{2}$ at differest lags.
+I fit a simple linear model using the traffic social distance `'TSD_rolling'` as a predictor of Hospitalization's percentage growth `'hosp_change'` and test the $R^{2}$ at different lags.
 
 ![optimal lag](/Data/optimal_lag.png)
 
@@ -63,7 +63,7 @@ The analysis produces a 13-day lag ($R^{2}$=0.815) as the best predictor of the 
 
 ## Conlusion
 
-The United States is in the mids of the Covid-19 pandemic. The disease has tested the preparedness of the government and the community to face the virus. It is very important to quantify the impact of Government policies and community actions to stop the spread of Covid-19.  This analysis tries to estimate transportation trends in the city of New York as they related to the number of Covid_19 patients hospitalize.
+The United States is in the mids of the Covid-19 pandemic. The disease has tested the preparedness of the government and the community to face the virus. It is very important to quantify the impact of Government policies and community actions to stop the spread of Covid-19.  This analysis tries to estimate transportation trends in the city of New York as they related to the number of Covid_19 patients hospitalized.
 
 I show that social distancing in New York really helped to curve down the rate of new hospitalizations.  Further, the analysis revealed that the impact of social distance captured by the traffic in the city is not obvious for about 13 days after the change in behavior.
 
