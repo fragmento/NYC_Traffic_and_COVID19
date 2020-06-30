@@ -24,7 +24,7 @@ This is the last project while at Flatiron School Data Science Immersive Program
 
 
 In this project, I plan to explore the relationship between social distance and Covid-19 related hospitalizations in New York City during the last 4 months.
-For this, I will try to quantify the amount of social distancing using tomtom's traffic index. Tomtom's traffic index is the percentage of extra time that it takes to travel any given day based on some baseline(no traffic).
+For this, I will try to quantify the amount of social distancing using tomtom's traffic index. [Tomtom's traffic index](https://www.tomtom.com/en_gb/traffic-index/new-york-traffic/) is the percentage of extra time that it takes to travel any given day based on some baseline(no traffic).
 
 I will use this to create a daily traffic social distance (TSD) index that will reflect the change in congestion with respect to a normal traffic day. I will use the first week of February as my baseline traffic congestion. I will divide each day of the daily traffic index by the corresponding day in the base week. To smooth the data I will use a 7-day moving average.
 
