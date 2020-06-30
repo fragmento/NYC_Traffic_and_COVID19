@@ -1,12 +1,12 @@
 ===================
-### mod_5_covid_tweeter
+### Social Distance and Covid_19
 ===================
 
 by: Andres Chaves
 
 This is the last project while at Flatiron School Data Science Immersive Program (on campus) in New York City.
 
-================================================================================
+============================================================================
 
     ├── Data                 <- The original, immutable data dump, graphs.
     |
@@ -18,7 +18,7 @@ This is the last project while at Flatiron School Data Science Immersive Program
 
 
 
-===============================================================================
+===========================================================================
 
 # Hospitalizations as a function of traffic in NYC
 
@@ -31,3 +31,9 @@ I will use this to create a daily traffic social distance (TSD) index that will 
 This will give me an index where 0 indicates maximum TSD (no traffic), 1 indicates no TSD (same traffic as baseline). TSD greater than 1 indicate more traffic than usual.
 
 Hospitalization data comes from [New York's City health webpage](https://www1.nyc.gov/site/doh/covid/covid-19-data.page). The dataset contains daily hospitalization numbers related to Covid_19 in NYC. To smooth the volatility of the hospitalization data I use a 7-day moving average. Then I find the day to day change to approximate the rate of hospital admissions.
+
+## Hospitalization Data
+
+I create a hospitalization index by finding the daily percentage of change in the 7-day rolling hospitalization numbers.
+
+![hospitalization rate](/Data/hospitalization_rate_of_change.png)
