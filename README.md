@@ -12,9 +12,9 @@ This is the last project while at Flatiron School Data Science Immersive Program
     |
     ├── Notebooks            <- Jupyter notebooks.
     |
-    ├── Reports              <- Generated analysis as HTML, PDF, Slides, etc.
+    ├── Reports              <- Slides.
     |
-    ├── README.md            <- The top-level README for developers using this project.
+    ├── README.md            <- The top-level README .
 
 
 
@@ -63,7 +63,7 @@ The analysis produces a 13-day lag ($R^{2}$=0.815) as the best predictor of the 
 
 ## AR and SARIMAX Model
 
-As a base model, I try to fit an autoregressive model to the data. Using auto_arima I find the best parameters (3,1,0). The predicted values are not very good. I get an RMSE (0.0424) value almost equal to the mean value in the test set. 
+As a base model, I try to fit an autoregressive model to the data. Using auto_arima I find the best parameters (3,1,0). The predicted values are not very good. I get an RMSE (0.0424) value almost equal to the mean value in the test set.
 
 ![ar model](/Data/AR_prediction_full.png)
 
