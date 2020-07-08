@@ -61,6 +61,15 @@ The analysis produces a 13-day lag ($R^{2}$=0.815) as the best predictor of the 
 
 ![13 lat regression](/Data/OLS_regression_13_day_lag.png)
 
+## AR and SARIMAX Model
+
+As a base model, I try to fit an autoregressive model to the data. Using auto_arima I find the best parameters (3,1,0). The predicted values are not very good. I get an RMSE (0.0424) value almost equal to the mean value in the test set. 
+
+![ar model](/Data/AR_prediction_full.png)
+
+Then, I try to improve upon this by fitting a SARIMAX model. Using auto_arima I find the best parameters (1,1,1)X(1,0,07) with the 13-day lagged traffic index as an exogenous variable. I get a lower RMSE (0.0248). However, this result is still not very impressive given the mean value of the test set (-0.042).
+
+![ar model](/Data/SARIMAX_prediction_full.png)
 ## Conlusion
 
 The United States is in the mids of the Covid-19 pandemic. The disease has tested the preparedness of the government and the community to face the virus. It is very important to quantify the impact of Government policies and community actions to stop the spread of Covid-19.  This analysis tries to estimate transportation trends in the city of New York as they related to the number of Covid_19 patients hospitalize.
