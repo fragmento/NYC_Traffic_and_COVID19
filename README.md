@@ -12,9 +12,9 @@ This is the last project while at Flatiron School Data Science Immersive Program
     |
     ├── Notebooks            <- Jupyter notebooks.
     |
-    ├── Reports              <- Generated analysis as HTML, PDF, Slides, etc.
+    ├── Reports              <- Slides.
     |
-    ├── README.md            <- The top-level README for developers using this project.
+    ├── README.md            <- The top-level README .
 
 
 
@@ -24,7 +24,7 @@ This is the last project while at Flatiron School Data Science Immersive Program
 
 
 In this project, I plan to explore the relationship between social distance and Covid-19 related hospitalizations in New York City during the last 4 months.
-For this, I will try to quantify the amount of social distancing using tomtom's traffic index. [Tomtom's traffic index](https://www.tomtom.com/en_gb/traffic-index/new-york-traffic/) is the percentage of extra time that it takes to travel any given day based on some baseline(no traffic).
+For this, I will try to quantify the amount of social distancing using tomtom's traffic index. Tomtom's traffic index is the percentage of extra time that it takes to travel any given day based on some baseline(no traffic).
 
 I will use this to create a daily traffic social distance (TSD) index that will reflect the change in congestion with respect to a normal traffic day. I will use the first week of February as my baseline traffic congestion. I will divide each day of the daily traffic index by the corresponding day in the base week. To smooth the data I will use a 7-day moving average.
 
@@ -53,7 +53,7 @@ As you can see Newyorkers started quarantining themselves much earlier than the 
 
 ## Linear regression model
 
-I fit a simple linear model using the traffic social distance `'TSD_rolling'` as a predictor of Hospitalization's percentage growth `'hosp_change'` and test the $R^{2}$ at different lags.
+I fit a simple linear model using the traffic social distance `'TSD_rolling'` as a predictor of Hospitalization's percentage growth `'hosp_change'` and test the $R^{2}$ at differest lags.
 
 ![optimal lag](/Data/optimal_lag.png)
 
@@ -61,9 +61,18 @@ The analysis produces a 13-day lag ($R^{2}$=0.815) as the best predictor of the 
 
 ![13 lat regression](/Data/OLS_regression_13_day_lag.png)
 
+## AR and SARIMAX Model
+
+As a base model, I try to fit an autoregressive model to the data. Using auto_arima I find the best parameters (3,1,0). The predicted values are not very good. I get an RMSE (0.0424) value almost equal to the mean value in the test set.
+
+![ar model](/Data/AR_prediction_full.png)
+
+Then, I try to improve upon this by fitting a SARIMAX model. Using auto_arima I find the best parameters (1,1,1)X(1,0,07) with the 13-day lagged traffic index as an exogenous variable. I get a lower RMSE (0.0248). However, this result is still not very impressive given the mean value of the test set (-0.042).
+
+![ar model](/Data/SARIMAX_prediction_full.png)
 ## Conlusion
 
-The United States is in the mids of the Covid-19 pandemic. The disease has tested the preparedness of the government and the community to face the virus. It is very important to quantify the impact of Government policies and community actions to stop the spread of Covid-19.  This analysis tries to estimate transportation trends in the city of New York as they related to the number of Covid_19 patients hospitalized.
+The United States is in the mids of the Covid-19 pandemic. The disease has tested the preparedness of the government and the community to face the virus. It is very important to quantify the impact of Government policies and community actions to stop the spread of Covid-19.  This analysis tries to estimate transportation trends in the city of New York as they related to the number of Covid_19 patients hospitalize.
 
 I show that social distancing in New York really helped to curve down the rate of new hospitalizations.  Further, the analysis revealed that the impact of social distance captured by the traffic in the city is not obvious for about 13 days after the change in behavior.
 
